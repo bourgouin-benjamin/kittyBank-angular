@@ -1,0 +1,121 @@
+/* ************ */
+/* CustomersAPI */
+/* ************ */
+
+.mainAPI{
+    max-width: 800px;
+    margin:auto;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.mainAPI h1{
+    font-family: var(--mainFont);
+    text-align:center;
+    margin:0 0 30px 0;
+}
+
+.dataSection{
+    width:100%;
+}
+
+.aboveTable{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    margin:0 0 20px 0;
+}
+
+.aboveTable form input[type="number"]{
+    padding:8px 13px;
+    width:50px;
+    border: solid 1px var(--blue);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.aboveTable form input[type="number"]:focus{
+    outline-color: var(--accentBlue);
+}
+
+.aboveTable form input[type="submit"]{
+    padding:9px 13px;
+    border:none;
+    background:var(--blue);
+    color:var(--white);
+    font-weight:bold;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor:pointer;
+}
+.aboveTable form input[type="submit"]:hover{
+    background:var(--accentBlue);
+}
+
+.actionButton{
+    font-size:0.85em;
+    color:var(--white);
+    text-decoration: none;
+    padding:9px 13px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-weight:bold;
+    border:none;
+    background:var(--blue);
+    cursor:pointer;
+}
+.actionButton.addButton{
+    background:var(--green);
+}
+.actionButton.updateButton{
+    background:var(--orange);
+}
+.actionButton.deleteButton{
+    background:var(--red);
+}
+.actionButton:hover{
+    filter: brightness(115%);
+}
+
+.dataSection table {
+    width:100%;
+    background:var(--white);
+}
+
+.dataSection th{
+    background:var(--blue);
+    padding:5px;
+    color:var(--white);
+    font-family: var(--secondaryFont);
+    font-weight:normal;
+    font-size:1.1em;
+}
+
+.dataSection tr > td:first-child{
+    width:20%;
+}
+
+.dataSection tbody tr:nth-child(2n){
+    background:#f1d7ca;
+}
+.dataSection tbody tr:nth-child(2n - 1){
+    background:var(--white);
+}
+
+.dataSection tbody tr td{
+    padding:10px;
+}
+
+.dataSection tbody tr td:first-child{
+    text-align:center;
+    font-weight:bold;
+    font-family:sans-serif;
+}
+.dataSection tbody tr td:last-child{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.dataSection.addressData th:first-child,
+.dataSection.addressData td:first-child {
+    max-width:10%
+}

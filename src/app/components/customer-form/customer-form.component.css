@@ -1,0 +1,140 @@
+/* ***** */
+/* FORMS */
+/* ***** */
+
+.formPage {
+    max-width: 800px;
+    margin:auto;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.formPage h1{
+    font-family: var(--mainFont);
+    text-align:center;
+    margin:0 0 30px 0;
+}
+
+.errorMessage{
+    margin:0 0 20px 0;
+    color:red;
+    font-family:sans-serif;
+    font-weight:bold;
+}
+
+.formStyle{
+    background: var(--white);
+    border:2px solid var(--blue);
+    border-radius: 8px;
+}
+
+.formStyle h2{
+    font-family: var(--secondaryFont);
+    color:var(--white);
+    background: var(--blue);
+    padding:10px 0;
+    text-align: center;
+}
+
+.formStyle form{
+    padding:20px;
+    box-sizing: border-box;
+    max-width:400px;
+    margin:auto;
+}
+
+.formStyle form div.formSection{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formStyle form div.formInput {
+    width:100%;
+    position:relative;
+    padding-top:15px;
+}
+
+.formStyle form div.formSection div.formInput{
+    width:calc(50% - 10px);
+}
+
+.formStyle form label{
+    position:absolute;
+    top:27px;
+    left:16px;
+    font-family: sans-serif;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    transition: 0.5s;
+    color:gray;
+    pointer-events: none;
+}
+
+.formStyle form input,
+.formStyle form select{
+    width:100%;
+    padding:10px 15px;
+    box-sizing: border-box;
+    border:solid 1px var(--black);
+    border-radius:3px;
+    margin-bottom:10px;
+}
+.formStyle form input:focus,
+.formStyle form input:valid,
+.formStyle form select:focus,
+.formStyle form select:valid{
+    border-color:transparent;
+    outline: solid 2px var(--accentBlue);
+}
+.formStyle form input:focus + label,
+.formStyle form input:valid + label,
+.formStyle form select:focus + label,
+.formStyle form select:valid + label{
+    top:-2px;
+    left:0;
+    letter-spacing:0;
+    font-size:0.75em;
+    color:var(--accentBlue);
+}
+.formStyle form input.invalid{
+    outline: solid 2px var(--red);
+}
+.formStyle form input.invalid + label{
+    top:-2px;
+    left:0;
+    letter-spacing:0;
+    font-size:0.75em;
+    color:var(--red);
+}
+
+.formStyle form p{
+    font-size:1.5em;
+    font-weight:bold;
+    margin:25px 0 10px 0;
+}
+.formStyle form p:first-child{
+    margin-top:0;
+}
+
+.formStyle form input[type="submit"]{
+    margin: 30px auto 0 auto;
+    border:none;
+    outline:none;
+    display:block;
+    width:auto;
+    color:white;
+    font-weight:bold;
+    font-family: sans-serif;
+    background:var(--blue);
+    cursor: pointer;
+}
+
+.formStyle form input[type="submit"].disabled{
+    background:rgb(174, 174, 174);
+    color:grey;
+    cursor:default;
+}

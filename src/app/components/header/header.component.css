@@ -1,0 +1,173 @@
+/* **** */
+/* MENU */
+/* **** */
+
+header{
+    width:100%;
+    background-color:var(--pink);
+    position:relative;
+    padding:2.5vh 0;
+    border-bottom: 1px var(--black) solid;
+}
+
+.logo{
+    width:fit-content;
+    margin:auto;
+}
+
+.logo img{
+    width:125px;
+    margin-right:10px;
+}
+.logo h1{
+    font-size:1.25em;
+}
+
+.burger{
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:18px;
+    right:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor:pointer;
+    z-index:100;
+    transition: all 0.5s;
+    padding-top: 2px;
+}
+.burger span{
+    width:100%;
+    height:2px;
+    background: var(--black);
+    transition: all 0.5s;
+}
+.burger.open span:first-child{
+    transform:rotate(45deg) translateY(10px) translateX(2.5px);
+}
+.burger.open span:nth-child(2){
+    transform:rotate(180deg);
+    opacity:0;
+}
+.burger.open span:last-child{
+    transform: rotate(-45deg) translateY(-10px) translateX(2.5px);
+}
+
+.menu{
+    position:absolute;
+    right:-100%;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background:var(--pink);
+    display:flex;
+    flex-flow:nowrap column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    transition: all ease-in 0.3s;
+}
+.menu ul {
+    list-style:none;
+}
+.menu ul li {
+    text-align:center;
+    margin:30px 0;
+}
+.menu ul li .link {
+    color:var(--black);
+    text-decoration:none;
+    font-size:1.5em;
+    font-family: var(--secondaryFont);
+}
+.menu .link.active{
+    text-decoration:underline !important;
+    cursor:default;
+}
+.menu .link:hover{
+    color:var(--accentBlue) !important;
+}
+.menu .link.active:hover{
+    color:var(--black) !important;
+}
+
+.menu.open{
+    right:0;
+}
+
+.menu .paw{
+    width:120%;
+    left:-220%;
+    top:calc(50% - 150px);
+    transition:all 0.5s linear;
+    position:absolute;
+}
+
+.menu .paw.grabing{
+    left:-100%;
+}
+
+.menu .menuCat{
+    height:150px;
+    position:absolute;
+    bottom:0;
+    right:10%;
+}
+
+/* ********** */
+/* RESPONSIVE */
+/* ********** */
+
+@media screen and (min-width: 700px) {
+    /* **** */
+    /* MENU */
+    /* **** */
+
+    header{
+        padding:20px 100px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    .logo{
+        margin:0;
+    }
+
+    .burger{
+        display:none;
+    }
+
+    .menu{
+        position:relative;
+        display:block;
+        background:transparent;
+        right:0;
+        top:0;
+        height:auto;
+        width:auto;
+        margin-top:10px;
+    }
+
+    .menu ul li{
+        margin:0;
+        display:inline-block;
+        margin-left:15px;
+    }
+
+    .menu ul li .link{
+        font-size: 1.25em;
+    }
+
+    .menu .paw{
+        display:none;
+    }
+
+    .menuCat{
+        display: none;
+    }
+
+}

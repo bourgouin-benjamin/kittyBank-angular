@@ -1,27 +1,47 @@
 # KittyBank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Manage your bank system with purrrr-fection, this is the promise of KittyBank. With its performing API, you'll be able to easely manage your data, regarding of your customers, their accounts and their address. 
 
-## Development server
+## Home Page 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![HomePage](/kitty-bank/src/screenshots/homepage.png)
+With its cute and refreshing design, KittyBank will help you work easely and with the happiness of a purring cat ! 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Customers API
 
-## Build
+![CustomersAPI](/kitty-bank/src/screenshots/customersAPI.png)
+> - List all your customers 
+> - Search a customer with its ID 
+> - Add a new Customer (Link to Form page)
+> - Update a customer's informations (Link to Form page)
+> - Delete a Customer and all its related data (address, accounts)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Customer Form 
 
-## Running unit tests
+![CustomerForm-AddCustomer](/kitty-bank/src/screenshots/addCustomer.png)
+![CustomerForm-UpdateCustomer](/kitty-bank/src/screenshots/updateCustomer.png)
+> - Add a new Customer. City and Province are automatically saved with the provided postal code 
+> - Update informations of existing Customer. Existing data automatically fulfilled. You can update customer's name, adress' city, postal code and province
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Accounts API 
 
-## Running end-to-end tests
+![AccountsAPi](/kitty-bank/src/screenshots/accountsAPI.png)
+> - List all accounts 
+> - Search all account of a specific customer with its ID 
+> - Add a new Account (Link to Form Page)
+> - Update an Account's informations (Link to Form page)
+> - Delete an account 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Account Form
 
-## Further help
+![AccountForm-AddAccount](/kitty-bank/src/screenshots/addAccount.png)
+![AccountForm-AddSavingsAccount](/kitty-bank/src/screenshots/addSavingsAccount.png)
+![AccountForm-UpdateCheckingAccount](/kitty-bank/src/screenshots/updateCheckingAccount.png)
+![AccountForm-UpdateSavingsAccount](/kitty-bank/src/screenshots/updateSavingsAccount.png)
+> - Add a new Account. Customer ID are comming from all existing ID, so no wrong ID can be provided
+> - Update informations of existing Account. Existing data automatically fulfilled. You can update Account's Balance, and Interest Rate in the case of a Savings Accounts.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Address API 
+
+*Not yet implemented, but will work the same way as the two others API with all CRUD operations available*

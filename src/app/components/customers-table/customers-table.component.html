@@ -1,0 +1,38 @@
+<main class="mainAPI">
+    <h1>Customers API</h1>
+
+    <section class="dataSection">
+        <div class="aboveTable">
+            <button *ngIf="isSearchOn" class="actionButton cancelButton" (click)="handleOnCancelSearchButtonClick()">Cancel search</button>
+            <form *ngIf="!isSearchOn" #searchByIdForm="ngForm" (ngSubmit)="searchById(searchByIdForm)">
+                <input ngModel #customerId="ngModel" type="number" min="1001" name="customerId" placeholder="1001" />
+                <input type="submit" value="Search by ID"/>
+            </form>
+
+            <a routerLink="../customerForm/0" title="Add new customer" class="actionButton addButton">Add new customer</a>
+        </div>
+        <p class="errorMessage" *ngIf="errorMessage != ''">{{errorMessage}}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of customers">
+                    <td>{{c.customerId}}</td>
+                    <td>{{c.name}}</td>
+                    <td>
+                        <a routerLink="../customerForm/{{c.customerId}}" class="actionButton updateButton">Update</a>
+                        <button (click)="deleteCustomer(c.customerId)" class="actionButton deleteButton">Delete</button>
+                        <a routerLink="../accounts/{{c.customerId}}" class="actionButton">Get Accounts</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="../../../assets/script/menu.js"></script>

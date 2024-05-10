@@ -1,0 +1,137 @@
+/* **** */
+/* MAIN */
+/* **** */
+
+.introduction {
+    background:var(--pink);
+    padding:50px 20px 0 20px;
+    box-sizing: border-box;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.introduction h1{
+    text-align:center;
+    font-size:1.75em;
+}
+
+.introduction h1 span{
+    display:block;
+    font-style:italic;
+}
+
+.introduction img{
+    width:40%;
+    margin-top:30px;
+    transform: translateY(22.11%);
+}
+
+.ctaArea{
+    padding:40px 20px 0 20px;
+    box-sizing: border-box;
+}
+
+.ctaArea h2{
+    font-size:1em;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.ctaArea > div {
+    display:flex;
+    flex-direction: column;
+    align-items:space-between;
+    justify-content:space-between;
+}
+
+.ctaArea > div a{
+    display:block;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.ctaItem {
+    border:solid var(--blue) 3px;
+    padding:10px;
+    box-sizing: border-box;
+    margin-bottom:10px;
+    border-radius:8px;
+    background:var(--white);
+}
+
+.ctaItem:hover{
+    background: var(--blue) !important;
+}
+
+.ctaItem h3{
+    font-family: var(--secondaryFont);
+    font-size:0.9em;
+    color:var(--blue);
+    margin-bottom:5px;
+}
+
+.ctaItem:hover h3{
+    color:var(--pink) !important;
+}
+
+.ctaItem p{
+    font-size:0.9em;
+}
+
+.ctaItem:hover p{
+    color:white !important;
+}
+
+/* ********** */
+/* RESPONSIVE */
+/* ********** */
+
+@media screen and (min-width: 700px) {
+    /* **** */
+    /* MAIN */
+    /* **** */
+    
+    .introduction h1{
+        font-size:2.5em;
+    }
+    
+    .introduction img{
+        width:30%;
+    }
+    
+    .ctaArea h2{
+        font-size:1.5em;
+        margin-bottom: 30px;
+    }
+    
+    .ctaArea > div {
+        flex-direction: row;
+        align-items:center;
+        max-width:800px;
+        margin:auto;
+    }
+    
+    .ctaArea > div a{
+        display:inline-block;
+    }
+
+    .ctaArea > div:nth-child(2) a{
+        margin:0 15px;
+    }
+    
+    .ctaItem {
+        padding:20px;
+    }
+    
+    .ctaItem h3{
+        font-size:1.2em;
+        margin-bottom:15px;
+    }
+
+    .ctaItem p{
+        font-size:1.1em;
+    }
+}

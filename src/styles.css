@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+/* ******* */
+/* GENERAL */
+/* ******* */
+
+*{
+    padding:0;
+    margin:0;
+}
+
+@font-face {
+    font-family: "Ageya";
+    src: local("Ageya"),
+        url("assets/font/ageya-webfont/Ageya-Regular.woff") format("woff"),
+        url("assets/font/ageya-webfont/Ageya-Regular.woff2") format("woff2"),
+        url("assets/font/ageya-webfont/Ageya-Regular.svg") format("svg"),
+        url("assets/font/ageya-webfont/Ageya-Regular.ttf") format("ttf"),
+        url("assets/font/ageya-webfont/Ageya-Regular.eot") format("eot");
+}
+
+@font-face {
+    font-family: "VintageLemonade";
+    src: local("VintageLemonade"), 
+        url("assets/font/vintageLemonade/VintageLemonade-Regular.woff") format("woff"),
+        url("assets/font/vintageLemonade/VintageLemonade-Regular.woff2") format("woff2"),
+        url("assets/font/vintageLemonade/VintageLemonade-Regular.svg") format("svg"),
+        url("assets/font/vintageLemonade/VintageLemonade-Regular.ttf") format("ttf"),
+        url("assets/font/vintageLemonade/VintageLemonade-Regular.eot") format("eof");
+}
+
+:root{
+    --white: #F4E9E3;
+    --black: #3D383D;
+    --pink: #FFAEDB;
+    --blue: #00345E;
+    --accentBlue: #00569C;
+    --green: #48A14B;
+    --orange: #ffa947;
+    --red: #e33944;
+
+    --mainFont: "Ageya";
+    --secondaryFont: "VintageLemonade";
+}
+
+body{
+    overflow-x: hidden;
+    background-image:url('assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:var(--black);
+    min-height:100vh;
+    background-attachment: fixed;
+}

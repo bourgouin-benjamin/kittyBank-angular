@@ -1,0 +1,20 @@
+<header id="header">
+    <div class="logo">
+        <img src="assets/images/logo_typo.svg" alt="Kitty Bank's logo">
+    </div>
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="menu" id="menu">
+        <img src="assets/images/paw.svg" alt="Kitty Paw" class="paw" id="paw">
+        <ul>
+            <li><a #home routerLink="" class="link" [ngClass]="{active: title == 'home'}" (click)="handleOnLinkClick(home)">Home</a></li>
+            <li><a #customers routerLink="customers" class="link" [ngClass]="{active: title == 'customers'}" title="Manage your customers with Kitty Bank" (click)="handleOnLinkClick(customers)">Customers</a></li>
+            <li><a #accounts routerLink="accounts/0" class="link" [ngClass]="{active: title == 'accounts'}" title="Manage your accounts with Kitty Bank" (click)="handleOnLinkClick(accounts)">Accounts</a></li>
+            <li><a #address routerLink="address" class="link" [ngClass]="{active: title == 'address'}" title="Manage your address with Kitty Bank" (click)="handleOnLinkClick(address)">Address</a></li>
+        </ul>
+        <img src="assets/images/blackCat5.svg" alt="black cat" class="menuCat">
+    </nav>
+</header>

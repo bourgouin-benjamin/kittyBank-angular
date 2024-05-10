@@ -1,0 +1,49 @@
+<main class="formPage">
+    <h1>Account Form</h1>
+
+    <p class="errorMessage" *ngIf="errorMessage != ''">{{errorMessage}}</p>
+
+    <section class="accountForm formStyle">
+        <h2>{{id == 0 ? 'Add new Account' : 'Update account'}}</h2>
+
+        <form #accountForm="ngForm" (ngSubmit)="handleData(accountForm)">
+            <div class="formSection" *ngIf="id == 0">
+                <div class="formInput">
+                    <select ngModel #customerId="ngModel" id="customerId" name="customerId" [required]="id == 0">
+                        <option disabled selected></option>
+                        <option *ngFor="let c of customers" value="{{c.customerId}}">{{c.customerId}} - {{c.name}}</option>
+                    </select>
+                    <label for="customerId">Customer ID</label>
+                </div>
+
+                <div class="formInput">
+                    <select ngModel #accountType="ngModel" id="accountType" name="accountType" [required]="id == 0">
+                        <option disabled selected></option>
+                        <option value="CHECKING">Checking</option>
+                        <option value="SAVINGS">Savings</option>
+                    </select>
+                    <label for="accountType">Account Type</label>
+                </div>
+            </div>
+
+            <div class="formInput">
+                <input ngModel #balance="ngModel" [(ngModel)]="account.balance"
+                    type="number" id="balance" name="balance" min="0" step=".01" required/>
+                <label for="name">Balance</label>
+            </div>
+
+            <div *ngIf="accountForm.value.accountType == 'SAVINGS' || (id != 0 && account.interestRate != undefined)" class="formInput" id="interestRateField">
+                <input ngModel #interestRate="ngModel" [(ngModel)]="account.interestRate"
+                    type="number" id="interestRate" name="interestRate" min="0" step=".001"
+                    [required]="accountForm.value.accountType == 'SAVINGS' || (id != 0 && account.interestRate != undefined)"/>
+                <label for="interestRate">Interest Rate</label>
+            </div>
+
+            <input type="submit" value="{{id == 0 ? 'Add new account' : 'Update account'}}" 
+                class="actionButton addButton" 
+                [disabled]="!accountForm.valid" [ngClass]="{disabled: !accountForm.valid}"/>
+        </form>
+    </section>
+</main>
+
+<script src="../../../assets/script/menu.js"></script>

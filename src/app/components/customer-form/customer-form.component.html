@@ -1,0 +1,55 @@
+<main class="formPage">
+    <h1>Customer Form</h1>
+
+    <p class="errorMessage" *ngIf="errorMessage != ''">{{errorMessage}}</p>
+
+    <section class="customerForm formStyle">
+        <h2>{{id == 0 ? 'Add new customer' : 'Update customer'}}</h2>
+
+        <form #customerForm="ngForm" (ngSubmit)="handleData(customerForm)">
+            <p>Customer's informations</p>
+
+            <div class="formInput" *ngIf="id == 0">
+                <select ngModel #customerType="ngModel" id="customerType" name="customerType" [required]="id == 0" >
+                    <option disabled selected></option>
+                    <option value="PERSON">Person</option>
+                    <option value="COMPANY">Company</option>
+                </select>
+                <label for="customerType">Customer Type</label>
+            </div>
+            
+            <div class="formInput">
+                <input ngModel #name="ngModel" type="text" id="name" name="name" required [(ngModel)]="customer.name"/>
+                <label for="name">Name</label>
+            </div>
+
+            <p>Address</p>
+
+            <div class="formInput" *ngIf="id == 0">
+                <input ngModel #streetNumber="ngModel" type="text" id="streetNumber" name="streetNumber" [required]="id == 0"/>
+                <label for="streetNumber">Street Number</label>
+            </div>
+
+            <div class="formInput" *ngIf="id != 0">
+                <input ngModel #city="ngModel" type="text" id="city" name="city" [required]="id != 0" [(ngModel)]="customer.address.city"/>
+                <label for="city">City</label>
+            </div>
+
+            <div class="formInput">
+                <input ngModel #postalCode="ngModel" type="text" id="postalCode" name="postalCode" maxlength="6" required [(ngModel)]="customer.address.postalCode"
+                pattern="[A-Za-z]\d[A-Za-z]\d[A-Za-z]\d" title="Postal code must respect the format X1X1X1"
+                [ngClass]="{invalid: postalCode.value != '' && !regex.exec(postalCode.value)}">
+                <label for="postalCode">Postal Code</label>
+            </div>
+
+            <div class="formInput" *ngIf="id != 0">
+                <input ngModel #province="ngModel" type="text" id="province" name="province" [required]="id != 0" [(ngModel)]="customer.address.province"/>
+                <label for="province">Province</label>
+            </div>
+
+            <input type="submit" value="{{id == 0 ? 'Add new customer' : 'Update customer'}}" class="actionButton addButton" [disabled]="!customerForm.valid" [ngClass]="{disabled: !customerForm.valid}"/>
+        </form>
+    </section>
+
+    <script src="../../../assets/script/menu.js"></script>
+</main>

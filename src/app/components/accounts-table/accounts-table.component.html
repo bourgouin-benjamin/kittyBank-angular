@@ -1,0 +1,41 @@
+<main class="mainAPI">
+    <h1>Accounts API</h1>
+
+    <section class="dataSection">
+        <div class="aboveTable">
+            <button *ngIf="isSearchOn" class="actionButton cancelButton" (click)="handleOnCancelSearchButtonClick()">Cancel search</button>
+            <form *ngIf="!isSearchOn" #searchByCustomerIdForm="ngForm" (ngSubmit)="handleFormSubmit(searchByCustomerIdForm)">
+                <input ngModel #customerId="ngModel" type="number" min="1001" name="customerId" placeholder="1001" />
+                <input type="submit" value="Search by customer ID"/>
+            </form>
+
+            <a href="accountForm/0" title="Add new account" class="actionButton addButton">Add new account</a>
+        </div>
+        <p class="errorMessage" *ngIf="errorMessage != ''">{{errorMessage}}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Account ID</th>
+                    <th>Balance</th>
+                    <th>Interest Rate</th>
+                    <th>Next check number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of accounts">
+                    <td>{{a.accountId}}</td>
+                    <td>{{a.balance}} $</td>
+                    <td>{{a.interestRate != undefined ? a.interestRate + ' %' : 'N/A'}}</td>
+                    <td>{{a.nextCheckNumber != undefined ? a.nextCheckNumber : 'N/A'}}</td>
+                    <td>
+                        <a href="accountForm/{{a.accountId}}" class="actionButton updateButton">Update</a>
+                        <button (click)="deleteAccount(a.accountId)" class="actionButton deleteButton">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="../../../assets/script/main.js"></script>
