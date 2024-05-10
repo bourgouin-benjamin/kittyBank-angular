@@ -4,7 +4,7 @@ Manage your bank system with purrrr-fection, this is the promise of KittyBank. W
 
 ## Home Page 
 
-![HomePage](/kitty-bank/src/screenshots/homepage.png)
+![HomePage](src/screenshots/homepage.png)
 With its cute and refreshing design, KittyBank will help you work easely and with the happiness of a purring cat ! 
 
 
